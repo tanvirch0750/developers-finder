@@ -18,6 +18,7 @@
     "jest": true
   },
   "rules": {
+    "import/no-unresolved": 0,
     "eslint-disable-next-line-prettier/prettier": 0,
     "react/prefer-stateless-function": 0,
     "class-methods-use-this": 0,
