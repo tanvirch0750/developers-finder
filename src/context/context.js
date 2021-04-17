@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import mockFollowers from './mockData.js/mockFollowers';
 import mockRepos from './mockData.js/mockRepos';
@@ -11,9 +12,7 @@ const GithubProvider = ({ children }) => {
     const [followers, setFollowers] = useState(mockFollowers);
 
     return (
-        <GithubContext.Provider
-            value={(githubUser, repos, followers, setGithubUser, setRepos, setFollowers)}
-        >
+        <GithubContext.Provider value={[githubUser, repos, followers]}>
             {children}
         </GithubContext.Provider>
     );

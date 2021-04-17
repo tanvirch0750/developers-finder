@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import { GithubContext } from '../context/context';
 
 const UserInfo = () => {
-    const data = React.useContext(GithubContext);
-    const { public_repos, followers, following, public_gists } = data;
+    const [githubUser] = React.useContext(GithubContext);
+    const { public_repos, followers, following, public_gists } = githubUser;
 
     const items = [
         {
