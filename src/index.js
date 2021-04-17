@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import { GithubProvider } from './context/context';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-// import { GithubProvider } from './context/context';
 // import { Auth0Provider } from '@auth0/auth0-react';
 
 ReactDOM.render(
     <React.StrictMode>
-        <App />
+        <GithubProvider>
+            <App />
+        </GithubProvider>
     </React.StrictMode>,
     document.getElementById('root')
 );
