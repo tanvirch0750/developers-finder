@@ -1,8 +1,9 @@
 import React from 'react';
+
+const Repos = () => <h2>repos component</h2>;
 // import styled from 'styled-components';
 // import { GithubContext } from '../context/context';
 // import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
-const Repos = () => <h2>repos component</h2>;
 
 // const Wrapper = styled.div`
 //   display: grid;

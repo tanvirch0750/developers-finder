@@ -1,8 +1,9 @@
 import React from 'react';
+
+const User = () => <h2>search component</h2>;
 // import styled from 'styled-components';
 // import Card from './Card';
 // import Followers from './Followers';
-const User = () => <h2>search component</h2>;
 
 // const Wrapper = styled.div`
 //   padding-top: 2rem;

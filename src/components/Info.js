@@ -1,10 +1,10 @@
 import React from 'react';
+
+const UserInfo = () => <h2>user info component</h2>;
 // import { GithubContext } from '../context/context';
 // import styled from 'styled-components';
 // import { GoRepo, GoGist } from 'react-icons/go';
 // import { FiUsers, FiUserPlus } from 'react-icons/fi';
-
-const UserInfo = () => <h2>user info component</h2>;
 
 // const Wrapper = styled.section`
 //   display: grid;
