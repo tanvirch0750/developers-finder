@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { GithubContext } from '../context/context';
 
 const Card = () => {
-    const [githubUser] = React.useContext(GithubContext);
+    const { githubUser } = React.useContext(GithubContext);
 
     const {
         avatar_url,
