@@ -19,7 +19,7 @@ ReactFC.fcRoot(FusionCharts, Chart, FusionTheme);
 const chartComponent = ({ data }) => {
     const chartConfigs = {
         type: 'pie3d', // The chart type
-        width: '400', // Width of the chart
+        width: '100%', // Width of the chart
         height: '400', // Height of the chart
         dataFormat: 'json', // Data type
         dataSource: {
@@ -29,7 +29,7 @@ const chartComponent = ({ data }) => {
                 theme: 'fusion',
                 decimals: 0,
                 pieRadius: '40%',
-                // paletteColors: '#1EDD62, #B74DED, #3385CE',
+                paletteColors: '#1EDD62, #B74DED, #3385CE, #E278C6, #4AC7B0',
             },
             // Chart Data
             data,
