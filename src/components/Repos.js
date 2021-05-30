@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 /* eslint-disable no-param-reassign */
 import React from 'react';
@@ -5,7 +7,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { GithubContext } from '../context/context';
 // import { ExampleChart, Pie3D, Column3D, Bar3D, Doughnut2D } from './Charts';
-import { Doughnut2D, Pie3D } from './Charts';
+import { Bar3D, Column3D, Doughnut2D, Pie3D } from './Charts';
 
 const Repos = () => {
     const { repos } = React.useContext(GithubContext);
@@ -36,6 +38,25 @@ const Repos = () => {
         .map((item) => ({ ...item, value: item.stars }))
         .slice(0, 5);
 
+    // stars, forks
+    let { stars, forks } = repos.reduce(
+        (total, item) => {
+            const { stargazers_count, name, forks } = item;
+
+            total.stars[stargazers_count] = { label: name, value: stargazers_count };
+            total.forks[forks] = { label: name, value: forks };
+
+            return total;
+        },
+        {
+            stars: {},
+            forks: {},
+        }
+    );
+
+    stars = Object.values(stars).slice(-5).reverse();
+    forks = Object.values(forks).slice(-5).reverse();
+
     // const chartData = [
     //     {
     //         label: 'Venezuela',
@@ -55,8 +76,9 @@ const Repos = () => {
         <section className="section">
             <Wrapper className="section-center">
                 <Pie3D data={mostUsedLanguages} />
-                <div />
+                <Column3D data={stars} />
                 <Doughnut2D data={mostPopularLanguages} />
+                <Bar3D data={forks} />
             </Wrapper>
         </section>
     );
