@@ -18,6 +18,14 @@ const GithubProvider = ({ children }) => {
     const [requests, setRequests] = useState(0);
     const [loading, isSetLoading] = useState(false);
 
+    // error state
+    const [error, setError] = useState({ show: false, msg: '' });
+
+    // error function
+    const toggleError = (show = false, msg = '') => {
+        setError({ show, msg });
+    };
+
     // check request rate
     const checkRequests = () => {
         axios(`${rootUrl}/rate_limit`)
@@ -30,15 +38,17 @@ const GithubProvider = ({ children }) => {
 
                 if (remaining === 0) {
                     // throw an error
+                    toggleError(true, 'Sorry you completed your hourly rate limit');
                 }
             })
             .catch((err) => console.log(err));
     };
 
+    // useEffect for chek requests
     useEffect(checkRequests, []);
 
     return (
-        <GithubContext.Provider value={{ githubUser, repos, followers, requests }}>
+        <GithubContext.Provider value={{ githubUser, repos, followers, requests, error }}>
             {children}
         </GithubContext.Provider>
     );
