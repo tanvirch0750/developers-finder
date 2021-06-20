@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
@@ -57,6 +58,11 @@ const GithubProvider = ({ children }) => {
 
         if (response) {
             setGithubUser(response.data);
+            const { login, followers_url } = response.data;
+            // repos
+            axios(`${rootUrl}/users/${login}/repos?per_page=100`).then((res) => setRepos(res.data));
+            // followers
+            axios(`${followers_url}?per_page=100`).then((res) => setFollowers(res.data));
         } else {
             toggleError(true, 'There is no user with that username');
         }
