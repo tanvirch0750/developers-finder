@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import mockFollowers from './mockData.js/mockFollowers';
@@ -107,8 +105,4 @@ const GithubProvider = ({ children }) => {
 
 export { GithubProvider, GithubContext };
 
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-// import mockUser from './mockData.js/mockUser';
-// import mockRepos from './mockData.js/mockRepos';
-// import mockFollowers from './mockData.js/mockFollowers';
+

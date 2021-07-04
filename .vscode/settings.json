@@ -40,7 +40,7 @@
       "numbers": "#c74ded",
       //"variables": "#0af7d3",
       //"variables": "#ff79cd",
-      "variables": "#ff79c6",
+      "variables": "#00e8c6",
 
       "textMateRules": [
         {
@@ -83,6 +83,38 @@
             "foreground": "#96E072"
           }
         }
+      ]
+    },
+    "[Learn with Sumit - Shades of Grey]": {
+      "textMateRules": [
+        
+        {
+          "scope": [
+            "keyword.operator",
+            "keyword.control",
+            "keyword.operator.new"
+          ],
+          "settings": {
+            "foreground": "#f92672"
+          }
+        },
+        {
+          "scope": "variable.parameter",
+          "settings": {
+            //"foreground": "#CE9178"
+            "foreground": "#FC9867"
+            //"foreground": "#ffb86c"
+          }
+        },
+        {
+          "scope": "entity.other.attribute-name",
+          "settings": {
+            //"foreground": "#e74c3c",
+            //"foreground": "#00e8c6"
+            //"foreground": "#96E072"
+          }
+        }
+        
       ]
     }
   },
